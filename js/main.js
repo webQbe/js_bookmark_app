@@ -16,10 +16,12 @@ function saveBookmark(e){
 
     }
 
-    // log bookmark object
-    console.log(bookmark);
+    // local storage test
+    // pass key & value
+    localStorage.setItem('test', 'Hello World!');
 
-
+    // click sumbit & go to storage > local storage > http://127.0.0.1:5500
+    // see saved items
 
 
     // prevent submit to log message
