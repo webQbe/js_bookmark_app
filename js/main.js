@@ -13,7 +13,18 @@ function saveBookmark(e){
     if(!siteName || !siteUrl){
 
         alert('Please fill in the form');
-        return false; // stop
+        return false; // stop running
+    }
+
+    // regular expression to validate urls
+    var expression = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[a-zA-Z0-9#-]+\/?)*$/;
+    var regex = new RegExp(expression);
+
+    // if entered value does not match regex
+    if(!siteUrl.match(regex)){
+
+        alert('Please use a valid URL');
+        return false; // stop running
     }
  
     // create bookmark array object
