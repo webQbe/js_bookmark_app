@@ -16,19 +16,33 @@ function saveBookmark(e){
 
     }
 
-    // local storage test
+    // check if bookmarks exist in local storage
+    if(localStorage.getItem('bookmarks') === null){
 
+        // initalize array
+        var bookmarks = [];
+
+        // insert to array
+        bookmarks.push(bookmark);
+
+        // save bookmarks array to local storage
+        // save it as a string with JSON.stringify()
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+
+    }
+
+
+
+
+/*  // local storage test
     // save to local storage
     localStorage.setItem('test', 'Hello World!');
-
     // get item from local storage
     console.log(localStorage.getItem('test'));
-
     // delete item from local storage
     localStorage.removeItem('test');
-
     // get item from local storage
-    console.log(localStorage.getItem('test'));
+    console.log(localStorage.getItem('test')); */
 
 
 
