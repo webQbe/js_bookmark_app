@@ -83,8 +83,10 @@ function fetchBookmarks(){
     // get current bookmark url
     var url = bookmarks[i].url;
 
-    // append current bookmark name to div#bookmarkResults
-    bookmarkResults.innerHTML += name;
+    // append html with bookmark name to bookmarkResults div
+    bookmarkResults.innerHTML += '<div class="bg-light p-3 mb-3">'+
+                                    '<h3>'+name+'</h3>'+
+                                 '</div>';
 
    }
 
