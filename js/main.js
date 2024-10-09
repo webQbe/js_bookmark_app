@@ -66,7 +66,13 @@ function fetchBookmarks(){
     // get bookmarks array from local storage
     var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
 
-    // log array
-     console.log(bookmarks);
+   // output bookmarks array to page
+
+   // select div
+   var bookmarkResults = document.getElementById('bookmarkResults');
+
+   // add html div
+   bookmarkResults.innerHTML = 'TEST';
+
 
 }
