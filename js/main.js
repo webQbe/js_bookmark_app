@@ -8,24 +8,15 @@ function saveBookmark(e){
     var siteName = document.getElementById('siteName').value;
     var siteUrl = document.getElementById('siteUrl').value;
 
-    // form validation
-    // if siteName or siteUrl is null
-    if(!siteName || !siteUrl){
+    // Call validateForm() to check if the inputs are valid
+    if(!validateForm(siteName, siteUrl)){
 
-        alert('Please fill in the form');
-        return false; // stop running
+        // if invalid stop running code
+        return false;
+
     }
 
-    // regular expression to validate urls
-    var expression = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[a-zA-Z0-9#-]+\/?)*$/;
-    var regex = new RegExp(expression);
 
-    // if entered value does not match regex
-    if(!siteUrl.match(regex)){
-
-        alert('Please use a valid URL');
-        return false; // stop running
-    }
  
     // create bookmark array object
     var bookmark = {
@@ -134,6 +125,12 @@ function deleteBookmark(url){
             // remove current url from array
             bookmarks.splice(i, 1);
 
+            /*  splice(i, 1) removes the bookmark at index i from the bookmarks array.
+                i is the index of the bookmark that matches.
+                1 indicates that you want to delete exactly 1 element from 
+                the array starting at index i.
+                 */
+
         }
    }
 
@@ -145,3 +142,30 @@ function deleteBookmark(url){
 
 }
 
+
+// Validate Form
+function validateForm(siteName, siteUrl){
+
+
+    // if siteName or siteUrl is null
+    if(!siteName || !siteUrl){
+
+        alert('Please fill in the form');
+        return false; // stop running
+    }
+
+    // regular expression to validate urls
+    var expression = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[a-zA-Z0-9#-]+\/?)*$/;
+    var regex = new RegExp(expression);
+
+    // if entered value does not match regex
+    if(!siteUrl.match(regex)){
+
+        alert('Please use a valid URL');
+        return false; // stop running
+    }
+
+    // if above conditions are not met
+    // keep code running 
+    return true;
+}
