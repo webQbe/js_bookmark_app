@@ -4,11 +4,22 @@ document.getElementById('myForm').addEventListener('submit', saveBookmark);
 
 function saveBookmark(e){
     
-    // select input element
+    // select values from input elements
     var siteName = document.getElementById('siteName').value;
+    var siteUrl = document.getElementById('siteUrl').value;
 
-    // log element
-    console.log(siteName);
+    // create bookmark array object
+    var bookmark = {
+
+        name : siteName,
+        url : siteUrl
+
+    }
+
+    // log bookmark object
+    console.log(bookmark);
+
+
 
 
     // prevent submit to log message
