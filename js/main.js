@@ -50,9 +50,11 @@ function saveBookmark(e){
 
         // save updated array to local storage
         localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-
-
     }
+
+    // clear form fields
+    document.getElementById('myForm').reset();
+
 
 /*  // local storage test
     // save to local storage
