@@ -11,8 +11,8 @@ function saveBookmark(e){
     // create bookmark array object
     var bookmark = {
 
-        name : siteName,
-        url : siteUrl
+        name: siteName,
+        url: siteUrl
 
     }
 
@@ -72,7 +72,20 @@ function fetchBookmarks(){
    var bookmarkResults = document.getElementById('bookmarkResults');
 
    // add html div
-   bookmarkResults.innerHTML = 'TEST';
+   bookmarkResults.innerHTML = '';
 
+   // loop through bookmarks array 
+   for(var i = 0; i < bookmarks.length; i++){
+
+    // get current bookmark name
+    var name = bookmarks[i].name;
+
+    // get current bookmark url
+    var url = bookmarks[i].url;
+
+    // append current bookmark name to div#bookmarkResults
+    bookmarkResults.innerHTML += name;
+
+   }
 
 }
