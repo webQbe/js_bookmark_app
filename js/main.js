@@ -99,7 +99,25 @@ function fetchBookmarks(){
 // Delete bookmarks
 function deleteBookmark(url){
 
-    // log url from delete button
-    console.log(url);
+    // get bookmarks array from local storage
+    var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+
+    // loop through bookmarks array 
+   for(var i = 0; i < bookmarks.length; i++){
+
+        // check if current url 
+        // is equal to url passed from delete button
+        if(bookmarks[i].url == url){
+
+            // remove current url from array
+            bookmarks.splice(i, 1);
+
+        }
+   }
+
+   // save updated array to local storage
+   localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+
+
 
 }
