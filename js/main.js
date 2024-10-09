@@ -57,6 +57,9 @@ function saveBookmark(e){
     // prevent submit to log message
     e.preventDefault();
 
+   // re-fetch bookmarks after updating array
+   fetchBookmarks();
+
 }
 
 
@@ -118,6 +121,8 @@ function deleteBookmark(url){
    // save updated array to local storage
    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
 
-
+   // re-fetch bookmarks after updating array
+   fetchBookmarks();
 
 }
+
