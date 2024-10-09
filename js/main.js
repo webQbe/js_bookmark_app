@@ -17,11 +17,19 @@ function saveBookmark(e){
     }
 
     // local storage test
-    // pass key & value
+
+    // save to local storage
     localStorage.setItem('test', 'Hello World!');
 
-    // click sumbit & go to storage > local storage > http://127.0.0.1:5500
-    // see saved items
+    // get item from local storage
+    console.log(localStorage.getItem('test'));
+
+    // delete item from local storage
+    localStorage.removeItem('test');
+
+    // get item from local storage
+    console.log(localStorage.getItem('test'));
+
 
 
     // prevent submit to log message
