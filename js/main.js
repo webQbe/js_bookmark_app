@@ -85,7 +85,9 @@ function fetchBookmarks(){
 
     // append html with bookmark name to bookmarkResults div
     bookmarkResults.innerHTML += '<div class="bg-light p-3 mb-3">'+
-                                    '<h3>'+name+'</h3>'+
+                                    '<h3>'+name+
+                                    ' <a class="btn btn-success" target="_blank" href="'+url+'">Visit</a> '
+                                    +'</h3>'+
                                  '</div>';
 
    }
