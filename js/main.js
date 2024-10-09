@@ -1,7 +1,7 @@
 // Listen to form submit
 document.getElementById('myForm').addEventListener('submit', saveBookmark);
 
-
+// Save Bookmarks
 function saveBookmark(e){
     
     // select values from input elements
@@ -29,10 +29,20 @@ function saveBookmark(e){
         // save it as a string with JSON.stringify()
         localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
 
+    } else { // if there is something in bookmarks (localStorage)
+
+        // get bookmarks array from local storage
+        // convert string to JSON
+        var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+
+        // add new bookmark to array
+        bookmarks.push(bookmark);
+
+        // save updated array to local storage
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+
+
     }
-
-
-
 
 /*  // local storage test
     // save to local storage
@@ -44,9 +54,19 @@ function saveBookmark(e){
     // get item from local storage
     console.log(localStorage.getItem('test')); */
 
-
-
     // prevent submit to log message
     e.preventDefault();
+
+}
+
+
+// Fetch Bookmarks
+function fetchBookmarks(){
+
+    // get bookmarks array from local storage
+    var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+
+    // log array
+     console.log(bookmarks);
 
 }
