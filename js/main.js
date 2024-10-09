@@ -87,10 +87,19 @@ function fetchBookmarks(){
     bookmarkResults.innerHTML += '<div class="bg-light p-3 mb-3">'+
                                     '<h3>'+name+
                                     ' <a class="btn btn-success" target="_blank" href="'+url+'">Visit</a> '
-                                    + ' <a class="btn btn-danger" target="_blank" href="'+url+'">Delete</a> '
+                                    + ' <a onclick="deleteBookmark(\''+url+'\')" class="btn btn-danger" href="#">Delete</a> '
                                     +'</h3>'+
                                  '</div>';
 
    }
+
+}
+
+
+// Delete bookmarks
+function deleteBookmark(url){
+
+    // log url from delete button
+    console.log(url);
 
 }
